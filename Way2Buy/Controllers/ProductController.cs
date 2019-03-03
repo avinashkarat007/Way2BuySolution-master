@@ -30,6 +30,7 @@ namespace Way2Buy.Controllers
             return View();
         }
 
+
         // POST: Product/Create
         [HttpPost]
         public ActionResult Create(Product product)

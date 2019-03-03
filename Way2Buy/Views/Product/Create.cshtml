@@ -6,19 +6,15 @@
 }
 
 <style>
-    .center_div {
-        margin: 0 auto;
-        width: 80%; /* value of your choice which suits your alignment */
-    }
+
 </style>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="row center_div">
-        
-        <div class="col-md-9">
-            <form>
+    <div class="row">
+        <div class="col offset-4">
+            <form class="form-inline">
                 <h4>Product</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -48,14 +44,14 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsOfferItem, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
+                    <div class="col-md-2">
                         @Html.CheckBoxFor(model => model.IsOfferItem, false)
                         @Html.ValidationMessageFor(model => model.IsOfferItem, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.OfferPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
+                    <div class="col-4">
                         @Html.EditorFor(model => model.OfferPrice, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.OfferPrice, "", new { @class = "text-danger" })
                     </div>
@@ -63,7 +59,7 @@
                 <div class="form-group">
                     <label>Choose Image</label>
                     <div class="col-md-10">
-                        <input type="file" id="file" class="form-control-file" />
+                        <input type="file" id="file" class="form-control-file btn btn-light" />
                     </div>
                 </div>
 
@@ -73,9 +69,6 @@
                     </div>
                 </div>
             </form>
-        </div>
-        <div class="col-md-3">
-            <img alt="Phelps" src="~/Images/Michael Phelps.jpeg" style="width: 200px; height: 200px;"/>
         </div>
     </div>
 
